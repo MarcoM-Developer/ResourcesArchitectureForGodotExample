@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn38akw7e4fcj"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ov8uv"]
+[ext_resource type="Script" path="res://Scripts/label.gd" id="1_owcry"]
+[ext_resource type="Resource" uid="uid://c8wlti4rin7vh" path="res://Resources/player money.tres" id="2_wcdli"]
+[ext_resource type="Script" path="res://Scripts/game_signal_emitter.gd" id="3_ruqkb"]
+[ext_resource type="Resource" uid="uid://ed2dnxmiqxyg" path="res://Resources/Increase Player Money Signal.tres" id="4_njuj5"]
+[ext_resource type="Script" path="res://Scripts/game_signal_listener.gd" id="6_25crs"]
+
+[node name="Level" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 116.0
+offset_right = 696.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 70
+text = "Mon: "
+script = ExtResource("1_owcry")
+player_money = ExtResource("2_wcdli")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 436.0
+offset_right = 717.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 50
+text = "Add Money"
+
+[node name="Node" type="Node" parent="CanvasLayer/Control/Button"]
+script = ExtResource("3_ruqkb")
+game_signal = ExtResource("4_njuj5")
+
+[node name="player" type="Node" parent="."]
+script = ExtResource("1_ov8uv")
+player_money = ExtResource("2_wcdli")
+increase_player_money_signal = ExtResource("4_njuj5")
+
+[node name="Node" type="Node" parent="player"]
+script = ExtResource("6_25crs")
+game_signal = ExtResource("4_njuj5")
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control/Button/Node" method="emit_game_signal"]
+[connection signal="response" from="player/Node" to="player" method="increase_money"]

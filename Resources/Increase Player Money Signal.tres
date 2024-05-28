@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="GameSignal" load_steps=2 format=3 uid="uid://ed2dnxmiqxyg"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/game_signal.gd" id="1_jevis"]
+
+[resource]
+script = ExtResource("1_jevis")

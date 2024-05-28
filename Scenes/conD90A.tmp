@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://blx6oyne0cg4g"]
+
+[ext_resource type="Script" path="res://Scripts/label.gd" id="1_8w32r"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 175.0
+offset_top = -168.0
+offset_right = -175.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Mo"
+script = ExtResource("1_8w32r")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 119.0
+grow_vertical = 0
+text = "History"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 119.0
+offset_top = -31.0
+offset_right = 238.0
+grow_vertical = 0
+text = "Skip"
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 238.0
+offset_top = -31.0
+offset_right = 357.0
+grow_vertical = 0
+text = "Auto"
+
+[node name="Button4" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 357.0
+offset_top = -31.0
+offset_right = 476.0
+grow_vertical = 0
+text = "Save"
+
+[node name="Button5" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 476.0
+offset_top = -31.0
+offset_right = 595.0
+grow_vertical = 0
+text = "Load"
+
+[node name="Button6" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 595.0
+offset_top = -31.0
+offset_right = 714.0
+grow_vertical = 0
+text = "Settings"
+
+[node name="Button7" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 714.0
+offset_top = -31.0
+offset_right = 833.0
+grow_vertical = 0
+text = "Increse Money"

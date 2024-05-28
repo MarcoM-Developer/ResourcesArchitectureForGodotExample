@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://wlwkqsww6ghf"]
+
+[ext_resource type="PackedScene" uid="uid://blx6oyne0cg4g" path="res://Scenes/control.tscn" id="1_nvitp"]
+[ext_resource type="PackedScene" uid="uid://ckukmf2fjgpdm" path="res://Scenes/player.tscn" id="2_720hb"]
+[ext_resource type="Resource" uid="uid://c8wlti4rin7vh" path="res://Resources/player money.tres" id="2_iqoxk"]
+[ext_resource type="PackedScene" uid="uid://bss1ykab1kyeo" path="res://Scenes/ui_bridge.tscn" id="3_m1vdb"]
+
+[node name="Level" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("1_nvitp")]
+
+[node name="Label" parent="CanvasLayer/Control/Panel" index="0"]
+playerMoney = ExtResource("2_iqoxk")
+
+[node name="Player" parent="." instance=ExtResource("2_720hb")]
+
+[node name="UI Bridge" parent="." instance=ExtResource("3_m1vdb")]
+
+[editable path="CanvasLayer/Control"]
